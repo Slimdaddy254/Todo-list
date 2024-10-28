@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Elegant Todo App</title>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap">
+</head>
+<body>
+    <div class="app">
+        <aside class="sidebar">
+            <div class="sidebar-header">
+                <h1>Projects</h1>
+                <button id="addProjectBtn" class="icon-btn">+</button>
+            </div>
+            <div id="projectsList" class="projects-list"></div>
+        </aside>
+        <main class="main-content">
+            <div class="content-header">
+                <h2 id="currentProject">My Tasks</h2>
+                <button id="addTodoBtn" class="btn primary">Add Task</button>
+            </div>
+            <div id="todoList" class="todo-list"></div>
+        </main>
+    </div>
+
+    <!-- Todo Modal -->
+    <div id="todoModal" class="modal">
+        <div class="modal-content">
+            <h3 id="modalTitle">Add New Task</h3>
+            <form id="todoForm">
+                <div class="form-group">
+                    <label for="title">Title</label>
+                    <input type="text" id="title" required>
+                </div>
+                <div class="form-group">
+                    <label for="description">Description</label>
+                    <textarea id="description"></textarea>
+                </div>
+                <div class="form-group">
+                    <label for="dueDate">Due Date</label>
+                    <input type="date" id="dueDate" required>
+                </div>
+                <div class="form-group">
+                    <label for="priority">Priority</label>
+                    <select id="priority">
+                        <option value="low">Low</option>
+                        <option value="medium">Medium</option>
+                        <option value="high">High</option>
+                    </select>
+                </div>
+                <div class="form-actions">
+                    <button type="button" id="cancelTodo" class="btn">Cancel</button>
+                    <button type="submit" class="btn primary">Save</button>
+                </div>
+            </form>
+        </div>
+    </div>
+</body>
+</html>
