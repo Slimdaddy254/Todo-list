@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Elegant Todo App</title>
+    <title>Todo App</title>
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap">
 </head>
 <body>
@@ -24,36 +24,65 @@
         </main>
     </div>
 
+    <!-- Project Modal -->
+    <div id="projectModal" class="modal">
+        <div class="modal-content">
+            <h3>New Project</h3>
+            <form id="projectForm">
+                <div class="form-group">
+                    <label for="projectName">Project Name</label>
+                    <input type="text" id="projectName" required>
+                </div>
+                <div class="form-actions">
+                    <button type="button" class="btn" id="cancelProject">Cancel</button>
+                    <button type="submit" class="btn primary">Create</button>
+                </div>
+            </form>
+        </div>
+    </div>
+
     <!-- Todo Modal -->
     <div id="todoModal" class="modal">
         <div class="modal-content">
-            <h3 id="modalTitle">Add New Task</h3>
+            <h3>New Task</h3>
             <form id="todoForm">
                 <div class="form-group">
-                    <label for="title">Title</label>
-                    <input type="text" id="title" required>
+                    <label for="todoTitle">Title</label>
+                    <input type="text" id="todoTitle" required>
                 </div>
                 <div class="form-group">
-                    <label for="description">Description</label>
-                    <textarea id="description"></textarea>
+                    <label for="todoDescription">Description</label>
+                    <textarea id="todoDescription" required></textarea>
                 </div>
                 <div class="form-group">
-                    <label for="dueDate">Due Date</label>
-                    <input type="date" id="dueDate" required>
+                    <label for="todoDueDate">Due Date</label>
+                    <input type="date" id="todoDueDate" required>
                 </div>
                 <div class="form-group">
-                    <label for="priority">Priority</label>
-                    <select id="priority">
+                    <label for="todoPriority">Priority</label>
+                    <select id="todoPriority" required>
                         <option value="low">Low</option>
                         <option value="medium">Medium</option>
                         <option value="high">High</option>
                     </select>
                 </div>
                 <div class="form-actions">
-                    <button type="button" id="cancelTodo" class="btn">Cancel</button>
-                    <button type="submit" class="btn primary">Save</button>
+                    <button type="button" class="btn" id="cancelTodo">Cancel</button>
+                    <button type="submit" class="btn primary">Create</button>
                 </div>
             </form>
+        </div>
+    </div>
+
+    <!-- Delete Modal -->
+    <div id="deleteModal" class="modal">
+        <div class="modal-content delete-modal">
+            <h3 id="deleteModalTitle">Delete Confirmation</h3>
+            <p id="deleteModalMessage">Are you sure you want to delete this item?</p>
+            <div class="form-actions">
+                <button id="cancelDelete" class="btn">Cancel</button>
+                <button id="confirmDelete" class="btn danger">Delete</button>
+            </div>
         </div>
     </div>
 </body>
